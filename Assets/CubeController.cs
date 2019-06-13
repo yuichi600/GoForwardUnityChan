@@ -27,11 +27,13 @@ public class CubeController : MonoBehaviour {
                 }
         }
 
-		void OnCollisionEnter2D(Collision2D other) {
-			if(other.gameObject.name!="UnityChan2D"){
-				audioSource = gameObject.GetComponent<AudioSource>();
-    		    audioSource.clip = audioClip;
+	void OnCollisionEnter2D(Collision2D other) {
+		if(other.gameObject.name!="UnityChan2D"){
+			audioSource = gameObject.GetComponent<AudioSource>();
+    		        audioSource.clip = audioClip;
 	        	audioSource.Play ();
-			}
-		}
+		}else{
+                        Debug.Log(other.gameObject.name);
+                }
+	}
 }
